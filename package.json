@@ -1,5 +1,5 @@
 {
-  "name": "node-logger",
+  "name": "node-requset-logger",
   "version": "1.0.0",
   "description": "this is a package the logs the all the api request in the server",
   "main": "index.js",
