@@ -1,6 +1,6 @@
 {
   "name": "node-requset-logger",
-  "version": "1.0.1",
+  "version": "1.0.1.1",
   "description": "this is a package the logs the all the api request in the server",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/nayanprasad/node-logger/issues"
   },
-  "homepage": "https://github.com/nayanprasad/node-logger#readme"
+  "homepage": "https://github.com/nayanprasad/node-logger#readme",
+  "dependencies": {
+    "node-requset-logger": "^1.0.1"
+  }
 }
