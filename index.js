@@ -5,7 +5,7 @@ const LIGHT_BLUE = '\x1b[94m';
 const RED = '\x1b[31m';
 const GRAYISH = '\x1b[37m';
 
-const nodeLogger = ((req, res, next) => {
+const nodeLogger = (isHeaders = false, isBody = false) => ((req, res, next) => {
     const arrow = `${GRAYISH}==> `;
     const timestamp = new Date().toISOString();
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -31,8 +31,9 @@ const nodeLogger = ((req, res, next) => {
     }
 
     console.log(`\n${arrow}[${timestamp}] Incoming request: ${methodColor}${method}${RESET} ${GRAYISH}${url}${RESET} from ${ip}`);
-    console.log(`${GRAYISH}Headers:${RESET}`, req.headers);
-    console.log(`${GRAYISH}Body:${RESET}`, req.body);
+
+    isHeaders && console.log(`${arrow}Headers: ${JSON.stringify(req.headers)}`);
+    isBody && console.log(`${arrow}Body: ${JSON.stringify(req.body)}`);
 
     res.on('finish', () => {
         const statusCode = res.statusCode;
