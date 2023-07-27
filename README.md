@@ -1,4 +1,4 @@
-# node-request-logger
+# [node-request-logger](https://www.npmjs.com/package/node-requset-logger)
 
 node-request-logger is a middleware for logging incoming requests in an Express application. It provides a convenient way to log the details of each incoming request, including the method, URL, headers, and body.
 
