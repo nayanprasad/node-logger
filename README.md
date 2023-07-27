@@ -29,3 +29,14 @@ app.listen(3000, () => {
   console.log('Server is listening on port 3000');
 });
 ```
+
+## Options
+
+The middleware accepts an optional options object as a parameter. The following options are available:
+
+| Option                   | Type     | Description                                     | Default |
+| -----------------------  | -------- | ----------------------------------------------  |---------|
+| `logHeaders`             | `boolean`| Whether to log the request headers.            | `false` |
+| `logBody`                | `boolean`| Whether to log the request body.               | `false` |
+
+

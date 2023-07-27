@@ -5,7 +5,7 @@ const LIGHT_BLUE = '\x1b[94m';
 const RED = '\x1b[31m';
 const GRAYISH = '\x1b[37m';
 
-const nodeLogger = (isHeaders = false, isBody = false) => ((req, res, next) => {
+const nodeLogger = ({logHeaders = false, logBody = false}) => ((req, res, next) => {
     const arrow = `${GRAYISH}==> `;
     const arrow2 = `${GRAYISH}> `;
     const timestamp = new Date().toISOString();
@@ -43,8 +43,8 @@ const nodeLogger = (isHeaders = false, isBody = false) => ((req, res, next) => {
 
     console.log(`\n${arrow}[${formattedTimestamp}] Incoming request: ${methodColor}${method}${RESET} ${GRAYISH}${url}${RESET} from ${ip}`);
 
-    isHeaders && console.log(`${arrow2}Headers: ${JSON.stringify(req.headers)}`);
-    isBody && console.log(`${arrow2}Body: ${JSON.stringify(req.body)}`);
+    logHeaders && console.log(`${arrow2}Headers: ${JSON.stringify(req.headers)}`);
+    logBody && console.log(`${arrow2}Body: ${JSON.stringify(req.body)}`);
 
     res.on('finish', () => {
         const statusCode = res.statusCode;
