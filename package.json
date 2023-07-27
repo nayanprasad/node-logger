@@ -1,6 +1,6 @@
 {
   "name": "node-requset-logger",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "this is a package the logs the all the api request in the server",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nayanprasad/node-logger.git"
+    "url": "git+https://github.com/nayanprasad/node-requset-logger.git"
   },
   "keywords": [
     "express",
@@ -25,9 +25,9 @@
   "author": "Nayan Prasad P K",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nayanprasad/node-logger/issues"
+    "url": "https://github.com/nayanprasad/node-requset-logger/issues"
   },
-  "homepage": "https://github.com/nayanprasad/node-logger#readme",
+  "homepage": "https://github.com/nayanprasad/node-requset-logger#readme",
   "dependencies": {
   }
 }
