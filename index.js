@@ -7,6 +7,7 @@ const GRAYISH = '\x1b[37m';
 
 const nodeLogger = (isHeaders = false, isBody = false) => ((req, res, next) => {
     const arrow = `${GRAYISH}==> `;
+    const arrow2 = `${GRAYISH}> `;
     const timestamp = new Date().toISOString();
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     const method = req.method;
@@ -41,8 +42,9 @@ const nodeLogger = (isHeaders = false, isBody = false) => ((req, res, next) => {
     });
 
     console.log(`\n${arrow}[${formattedTimestamp}] Incoming request: ${methodColor}${method}${RESET} ${GRAYISH}${url}${RESET} from ${ip}`);
-    isHeaders && console.log(`${arrow}Headers: ${JSON.stringify(req.headers)}`);
-    isBody && console.log(`${arrow}Body: ${JSON.stringify(req.body)}`);
+
+    isHeaders && console.log(`${arrow2}Headers: ${JSON.stringify(req.headers)}`);
+    isBody && console.log(`${arrow2}Body: ${JSON.stringify(req.body)}`);
 
     res.on('finish', () => {
         const statusCode = res.statusCode;
@@ -58,4 +60,4 @@ const nodeLogger = (isHeaders = false, isBody = false) => ((req, res, next) => {
     next();
 });
 
-export default nodeLogger;
+module.exports = nodeLogger;
