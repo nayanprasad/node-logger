@@ -5,7 +5,7 @@ const LIGHT_BLUE = '\x1b[94m';
 const RED = '\x1b[31m';
 const GRAYISH = '\x1b[37m';
 
-const nodeLogger = ({logHeaders = false, logBody = false}) => ((req, res, next) => {
+const nodeLogger = (logHeaders = false, logBody = false) => ((req, res, next) => {
     const arrow = `${GRAYISH}==> `;
     const arrow2 = `${GRAYISH}> `;
     const timestamp = new Date().toISOString();
